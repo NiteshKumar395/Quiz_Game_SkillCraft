@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Game</title>
+<link rel="stylesheet" href="task3_index.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="app-header">
+    <h1>Quiz Game</h1>
+    <p class="subtitle">Answer each question, lock in your choice, and see your score at the end.</p>
+  </header>
+
+  <div class="tracker" id="tracker"></div>
+
+  <!-- START SCREEN -->
+  <div class="card start-card" id="startScreen">
+    <h2>General Knowledge Round</h2>
+    <p>Ten questions, three formats.</p>
+    <ul class="legend">
+      <li><span class="tag tag-single">Pick One</span> Choose the single best answer.</li>
+      <li><span class="tag tag-multi">Pick All</span> Select every option that applies.</li>
+      <li><span class="tag tag-fill">Fill In</span> Type the missing word.</li>
+    </ul>
+    <button class="btn btn-primary" id="startBtn">Start Quiz</button>
+  </div>
+
+  <!-- QUESTION SCREEN -->
+  <div class="card hidden" id="quizScreen">
+    <div class="q-meta">
+      <span class="q-count" id="qCount">Question 1 of 10</span>
+      <span class="q-type-tag" id="qTypeTag">Pick One</span>
+    </div>
+    <div class="q-text" id="qText"></div>
+    <div class="options" id="optionsWrap"></div>
+    <input type="text" class="fill-input hidden" id="fillInput" placeholder="Type your answer...">
+    <div class="feedback" id="feedback"></div>
+    <div class="actions">
+      <button class="btn btn-primary" id="lockBtn" disabled>Lock In Answer</button>
+    </div>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div class="card hidden" id="resultsScreen">
+    <div class="score-hero">
+      <div class="score-label">Final Score</div>
+      <div class="score-value"><span id="finalScore">0</span><span class="slash">/</span><span id="finalTotal">10</span></div>
+      <p class="score-msg" id="scoreMsg"></p>
+    </div>
+    <div class="review" id="reviewList"></div>
+    <button class="btn btn-primary" id="restartBtn">Play Again</button>
+  </div>
+
+</div>
+
+<script src="task3_index.js"></script>
+</body>
+</html>
